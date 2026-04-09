@@ -44,29 +44,29 @@ The system is organized into four fundamental layers:
 </div>
 
 ### 1. Equipment & Instrumentation Layer
-- NI-VISA over GPIB (IEEE-488.2) for high-stability reference standards.
-- HP 34401A as the metrological reference pattern.
+* NI-VISA over GPIB (IEEE-488.2) for high-stability reference standards.
+* HP 34401A as the metrological reference pattern.
 
 ### 2. Hardware & Physical Layer
-- Custom 4-layer PCB with high-isolation relay matrix for signal integrity.
-- Arduino Nano (ATmega328P) via SPI (LINX) for sub-millisecond actuation latency.
+* Custom 4-layer PCB with high-isolation relay matrix for signal integrity.
+* Arduino Nano (ATmega328P) via SPI (LINX) for sub-millisecond actuation latency.
 
 ### 3. Software & Execution Layer
-- LabVIEW Queued Message Handler (QMH) for asynchronous execution and UI responsiveness.
-- Deterministic polling and real-time pass/fail validation against programmable tolerances.
+* LabVIEW Queued Message Handler (QMH) for asynchronous execution and UI responsiveness.
+* Deterministic polling and real-time pass/fail validation against programmable tolerances.
 
 ### 4. Database & Analytics Layer
-- PostgreSQL relational database hosted on a Raspberry Pi 5 edge node.
-- CLI-driven Python pipeline (ReportLab / psycopg2) for batch PDF certificate generation.
+* PostgreSQL relational database hosted on a Raspberry Pi 5 edge node.
+* CLI-driven Python pipeline (ReportLab / psycopg2) for batch PDF certificate generation.
 
 ---
 
 ## System Performance
 
-- Reduced verification time from ~30 minutes (manual process) to ~5 minutes with automated reporting.
-- Measurement repeatability: <0.1% standard deviation across 10 consecutive runs.
-- Relative measurement error: <0.5% for most voltage, current, and resistance ranges.
-- Fully automated data logging and report generation.
+* Reduced verification time from ~30 minutes (manual process) to ~5 minutes with automated reporting.
+* Measurement repeatability: <0.1% standard deviation across 10 consecutive runs.
+* Relative measurement error: <0.5% for most voltage, current, and resistance ranges.
+* Fully automated data logging and report generation.
 
 ---
 
@@ -85,18 +85,18 @@ The system is organized into four fundamental layers:
 
 ## Scope & Constraints
 
-- **Capabilities:** Full autonomous verification, real-time tolerance validation, and batch report generation.
-- **Limitations:** This is a verification platform — it does not perform internal firmware calibration of the DUT.
-- **Standardization:** Performance is benchmarked against the calibration status of the reference multimeter.
+* **Capabilities:** Full autonomous verification, real-time tolerance validation, and batch report generation.
+* **Limitations:** This is a verification platform — it does not perform internal firmware calibration of the DUT.
+* **Standardization:** Performance is benchmarked against the calibration status of the reference multimeter.
 
 ---
 
 ## Engineering Challenges
 
-- Maintaining signal integrity in a relay-based switching matrix.
-- Synchronizing GPIB instrumentation with deterministic execution timing.
-- Designing a scalable and traceable database schema.
-- Ensuring real-time responsiveness while logging and reporting asynchronously.
+* Maintaining signal integrity in a relay-based switching matrix.
+* Synchronizing GPIB instrumentation with deterministic execution timing.
+* Designing a scalable and traceable database schema.
+* Ensuring real-time responsiveness while logging and reporting asynchronously.
 
 ---
 
